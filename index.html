@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CONECTA RP — Relações Públicas UEL</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Inter:wght@400;600&family=Caveat+Brush&display=swap">
+<style>
+:root{--ink:#0b2a6b;--mid:#0d47a1;--vivo:#1e6fd9;--claro:#8dbcf5;--muito:#dbe9fb;--paper:#f1efe9;--card:#fff;--txt:#14213d;--gold:#e0a21f;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#bcd6ff;--mid:#6fa8f5;--vivo:#5b9cf0;--claro:#27508f;--muito:#16294d;--paper:#0c1426;--card:#13203b;--txt:#e6edfa;color-scheme:dark}}
+:root[data-theme="dark"]{--ink:#bcd6ff;--mid:#6fa8f5;--vivo:#5b9cf0;--claro:#27508f;--muito:#16294d;--paper:#0c1426;--card:#13203b;--txt:#e6edfa;color-scheme:dark}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;min-height:100%;background:var(--paper);color:var(--txt);font:400 16px/1.55 Inter,system-ui,sans-serif;
+background-image:radial-gradient(var(--muito) 1.2px,transparent 1.4px);background-size:14px 14px}
+h1,h2,h3{font-family:Montserrat,sans-serif;color:var(--ink);line-height:1.15;margin:0 0 .5em}
+.hand{font-family:'Caveat Brush','Segoe Print',cursive;font-weight:400}
+a{color:var(--vivo)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.app{display:flex;min-height:100vh}
+/* menu lateral */
+nav.side{width:270px;flex:none;background:var(--ink);color:#fff;padding:18px 14px;position:sticky;top:0;height:100vh;overflow-y:auto}
+:root[data-theme="dark"] nav.side,:root:not([data-theme="light"]) nav.side{--navbg:#0a1a3d}
+@media(prefers-color-scheme:dark){nav.side{background:#0a1a3d;color:#e6edfa}}
+nav.side .logo{background:#fff;border-radius:14px;padding:8px;display:block;margin-bottom:18px}
+nav.side .logo img{width:100%;display:block}
+.side button,.side a.item{all:unset;box-sizing:border-box;display:flex;justify-content:space-between;align-items:center;width:100%;padding:11px 12px;border-radius:10px;cursor:pointer;font:600 15px Montserrat,sans-serif;color:inherit}
+.side button:hover,.side a.item:hover,.side .on{background:rgba(255,255,255,.14)}
+.side button:focus-visible,.side a.item:focus-visible{outline:3px solid var(--gold)}
+.sub{display:none;margin:2px 0 6px 14px;border-left:3px solid var(--claro);padding-left:8px}
+.sub.open{display:block}
+.sub a{display:block;padding:8px 10px;border-radius:8px;color:inherit;text-decoration:none;font-size:14px}
+.sub a:hover{background:rgba(255,255,255,.14)}
+.chev{transition:transform .2s}.open-b .chev{transform:rotate(90deg)}
+.topbar{display:none}
+main{flex:1;min-width:0;padding:22px clamp(16px,3vw,40px) 40px}
+/* busca */
+.search{position:relative;max-width:620px;margin:0 auto 26px}
+.search input{width:100%;padding:14px 18px;border-radius:999px;border:3px solid var(--vivo);background:var(--card);color:var(--txt);font:400 16px Inter,sans-serif}
+.drop{display:none;position:absolute;left:0;right:0;top:56px;background:var(--card);border:2px solid var(--vivo);border-radius:18px;padding:14px;z-index:5}
+.drop.show{display:block}
+.drop p{margin:0 0 8px;font-weight:600;color:var(--ink)}
+.chip{display:inline-block;margin:0 6px 6px 0;padding:6px 12px;border-radius:999px;background:var(--muito);color:var(--ink);text-decoration:none;font-size:14px;cursor:pointer;border:0;font-family:inherit}
+.chip:hover{background:var(--claro)}
+/* colagem */
+.torn{clip-path:polygon(0 3%,6% 0,14% 2%,25% 0,38% 2%,52% 0,66% 2%,80% 0,92% 2%,100% 0,100% 97%,92% 100%,80% 98%,66% 100%,50% 98%,36% 100%,22% 98%,10% 100%,0 98%)}
+.hero{display:block;text-decoration:none;position:relative;background:var(--mid);color:#fff;padding:44px clamp(20px,5vw,56px);margin-bottom:34px;overflow:hidden;
+background-image:radial-gradient(rgba(255,255,255,.18) 1.5px,transparent 1.8px),linear-gradient(120deg,var(--ink),var(--vivo));background-size:12px 12px,100% 100%}
+.hero h1{color:#fff;font-size:clamp(28px,5vw,52px);max-width:14em}
+.hero .note{display:inline-block;background:#f4f1ea;color:#0b2a6b;padding:10px 16px;transform:rotate(-2deg);font-size:22px;margin-top:6px}
+.hero .arrow{position:absolute;right:6%;bottom:14%;font-size:90px;color:var(--claro);transform:rotate(-12deg);line-height:1}
+.hero .stamp{position:absolute;right:5%;top:12%;width:min(200px,32%);background:#fff;border-radius:14px;padding:8px;transform:rotate(4deg)}
+.hero .stamp img{width:100%;display:block}
+section.blk{margin-bottom:38px}
+.tag{display:inline-block;background:var(--mid);color:#fff;padding:6px 16px;font:400 24px 'Caveat Brush',cursive;transform:rotate(-1.5deg);margin-bottom:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.card{background:var(--card);padding:22px 20px;border:2px solid var(--muito)}
+.card h3{font-size:18px}
+.date{font:800 13px Montserrat,sans-serif;color:var(--vivo)}
+.btn{display:inline-block;background:var(--vivo);color:#fff;padding:10px 18px;border-radius:999px;font:600 15px Montserrat,sans-serif;text-decoration:none}
+.btn.gold{background:var(--gold);color:#1a1a1a}
+.calw{background:var(--card);border:2px solid var(--muito);border-radius:16px;padding:16px;max-width:460px;margin-bottom:16px}
+.calh{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font:800 17px Montserrat,sans-serif;color:var(--ink)}
+.calh button{border:0;background:var(--muito);color:var(--ink);width:38px;height:38px;border-radius:50%;font-size:22px;cursor:pointer}
+.calg{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
+.calg span{padding:8px 0;border-radius:8px;font-size:14px}
+.calg .dw{font-weight:600;color:var(--vivo);font-size:12px}
+.calg .today{background:var(--vivo);color:#fff;font-weight:600}
+.calg .mk{background:var(--gold);color:#1a1a1a;font-weight:600}
+.caln{margin:10px 0 0;padding-left:18px;font-size:14px}
+footer{border-top:3px dashed var(--claro);padding-top:20px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+footer small{max-width:46ch;opacity:.8}
+.view{display:none}.view.on{display:block}
+.page{max-width:760px}
+.ph{border:2px dashed var(--vivo);padding:18px;border-radius:14px;background:var(--card)}
+.links a{display:block;background:var(--card);border:2px solid var(--muito);padding:14px 18px;margin-bottom:10px;border-radius:12px;font-weight:600;text-decoration:none}
+.links a:hover{border-color:var(--vivo)}
+.tl{border-left:4px solid var(--vivo);padding-left:18px;margin-left:8px}
+.tl div{margin-bottom:18px}.tl b{font-family:Montserrat;color:var(--ink)}
+@media(max-width:820px){
+ .app{display:block}
+ .topbar{display:flex;align-items:center;justify-content:space-between;background:var(--ink);padding:8px 14px;position:sticky;top:0;z-index:20}
+ @media(prefers-color-scheme:dark){.topbar{background:#0a1a3d}}
+ .topbar img{height:34px;background:#fff;border-radius:8px;padding:3px}
+ .topbar button{all:unset;cursor:pointer;color:#fff;font:600 15px Montserrat;padding:8px 12px;border:2px solid #fff;border-radius:999px}
+ nav.side{position:fixed;left:0;top:0;bottom:0;z-index:30;transform:translateX(-100%);transition:transform .25s;height:auto;width:min(300px,86vw)}
+ nav.side.open{transform:none}
+ .hero .arrow{display:none}.hero .stamp{display:none}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="topbar"><img src="imagens/logo-conecta-rp.png" alt="Conecta RP"><button id="burger" aria-expanded="false">Menu</button></div>
+<div class="app">
+<nav class="side" id="side" aria-label="Menu principal">
+ <a class="logo" href="#inicio"><img src="imagens/logo-conecta-rp.png" alt="Conecta RP — página inicial"></a>
+ <a class="item" href="#inicio">Início</a>
+ <button data-sub="s-rp" aria-expanded="false">RP UEL <span class="chev">›</span></button>
+ <div class="sub" id="s-rp">
+  <a href="#relacoes-publicas">Relações Públicas</a>
+  <a href="#sobre-o-curso">Sobre o curso</a>
+  <a href="#professores">Professores</a>
+  <a href="#linha-do-tempo">Linha do tempo</a>
+ </div>
+ <a class="item" href="#galeria">Galeria</a>
+ <a class="item" href="#contatos">Contatos</a>
+ <a class="item" data-ext="vestibular" href="#" target="_blank" rel="noopener">Área Vestibulanda <span>↗</span></a>
+ <button data-sub="s-ac" aria-expanded="false">Acervo <span class="chev">›</span></button>
+ <div class="sub" id="s-ac">
+  <a href="#links-urgentes">Links urgentes</a>
+ </div>
+</nav>
+
+<main>
+<div class="search">
+ <input id="q" type="search" placeholder="Pesquisar: prazos, TCC, estágio, contatos…" aria-label="Pesquisar no site" autocomplete="off">
+ <div class="drop" id="drop"><p>Mais pesquisados</p><div id="top"></div><div id="res"></div></div>
+</div>
+
+<!-- INÍCIO -->
+<div class="view on" id="v-inicio">
+ <a class="hero torn" href="#linha-do-tempo">
+  <div class="stamp"><img src="imagens/logo-rp-me-explica.png" alt="RP me explica"></div>
+  <h1>Você conhece a história de RP UEL?</h1>
+  <span class="note hand">Clique e siga o caminho da linha do tempo</span>
+  <span class="arrow" aria-hidden="true">➜</span>
+ </a>
+
+ <section class="blk">
+  <span class="tag">Eventos do curso</span>
+  <div class="grid" id="events"></div>
+ </section>
+
+ <section class="blk">
+  <span class="tag">Calendário acadêmico UEL</span>
+  <div class="calw" id="cal">
+   <div class="calh"><button id="cprev" aria-label="Mês anterior">‹</button><strong id="calttl"></strong><button id="cnext" aria-label="Próximo mês">›</button></div>
+   <div class="calg" id="calgrid"></div>
+   <ul class="caln" id="caln"></ul>
+  </div>
+  <p style="margin:0 0 10px">Prazos e datas oficiais ficam no calendário da UEL:</p>
+  <a class="btn" data-ext="calendario" href="#" target="_blank" rel="noopener">Abrir calendário acadêmico oficial ↗</a>
+ </section>
+</div>
+
+<!-- PÁGINAS INTERNAS (geradas por JS) -->
+<div id="pages"></div>
+
+<footer>
+ <div><span class="tag" style="margin:0">Fique por dentro</span><br><a class="btn gold" data-ext="linktree" href="#" target="_blank" rel="noopener">Nossas redes sociais ↗</a></div>
+ <small>Conecta RP é um projeto de campanha estudantil e não é um site oficial da UEL nem do curso. Mais informação, mais conexão.</small>
+</footer>
+</main>
+</div>
+
+<script>
+// ===== EDITE AQUI: links reais =====
+var LINKS={
+ vestibular:"https://www.uel.br",      // trocar pelo link do vestibular do ano
+ calendario:"https://www.uel.br",      // trocar pelo calendário acadêmico vigente
+ linktree:"https://linktr.ee/",        // trocar pelo Linktree da campanha
+ portal:"https://www.uel.br"           // portal UEL
+};
+var EVENTS=[
+ {d:"Data a definir",t:"Recepção dos calouros",p:"Boas-vindas e primeiras informações do curso."},
+ {d:"Data a definir",t:"Semana de Relações Públicas",p:"Palestras, oficinas e encontros com profissionais."},
+ {d:"Data a definir",t:"Apresentação de TCCs",p:"Bancas abertas para quem quer saber como funciona."}
+];
+// Datas destacadas no calendário (copie do calendário oficial). Formato: {d:"2026-12-15",t:"Fim do semestre"}
+var MARCOS=[];
+var URGENT=[
+ ["Como funciona o TCC?",LINKS.portal],["Estágio: regras e formulários",LINKS.portal],["Atividades acadêmicas complementares",LINKS.portal],
+ ["Regimento da graduação",LINKS.portal],["Secretaria do departamento",LINKS.portal],["Portal do aluno UEL",LINKS.portal]
+];
+var ph=function(t){return '<div class="ph">'+t+'</div>'};
+var PAGES={
+ "relacoes-publicas":["Relações Públicas","<p>O que faz uma profissional de RP? Aqui entra um texto simples e direto sobre a profissão.</p>"+ph("Conteúdo a coletar com o curso.")],
+ "sobre-o-curso":["Sobre o curso","<p>Grade, duração, turnos, estágio, TCC e atividades de extensão.</p>"+ph("Conteúdo a coletar com a coordenação.")],
+ "professores":["Professores","<p>Docentes efetivos e temporários, áreas de atuação e contato.</p>"+ph("Lista de docentes a coletar.")],
+ "linha-do-tempo":["História e linha do tempo","<p>A trajetória de RP UEL, como está nas paredes do departamento.</p><div class='tl'><div><b>Ano a coletar</b><br>Criação do curso.</div><div><b>Ano a coletar</b><br>Primeira turma formada.</div><div><b>Ano a coletar</b><br>Marcos que estão nas paredes do departamento.</div></div>"+ph("Fotos e datas serão incluídas após a coleta no departamento.")],
+ "galeria":["Galeria","<p>Fotos de eventos, turmas e do dia a dia.</p>"+ph("Imagens a coletar (com autorização de uso).")],
+ "contatos":["Contatos","<p>Coordenação, secretaria, colegiado e representantes de turma.</p>"+ph("E-mails e telefones a confirmar.")],
+ "links-urgentes":["Links urgentes","<p>As informações que mais travam o dia a dia, direto no portal UEL.</p><div class='links'>"+URGENT.map(function(u){return '<a href="'+u[1]+'" target="_blank" rel="noopener">'+u[0]+' ↗</a>'}).join("")+"</div>"]
+};
+var $=function(s){return document.querySelector(s)};
+// páginas
+$("#pages").innerHTML=Object.keys(PAGES).map(function(k){return '<div class="view page" id="v-'+k+'"><h1>'+PAGES[k][0]+'</h1>'+PAGES[k][1]+'</div>'}).join("");
+$("#events").innerHTML=EVENTS.map(function(e){return '<div class="card torn"><span class="date">'+e.d+'</span><h3>'+e.t+'</h3><p>'+e.p+'</p></div>'}).join("");
+var MESES=["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
+var cur=new Date();cur=new Date(cur.getFullYear(),cur.getMonth(),1);
+function pad(n){return n<10?"0"+n:""+n}
+function drawCal(){
+ var y=cur.getFullYear(),m=cur.getMonth(),first=new Date(y,m,1).getDay(),n=new Date(y,m+1,0).getDate(),now=new Date(),h="",notes="";
+ ["dom","seg","ter","qua","qui","sex","sáb"].forEach(function(w){h+='<span class="dw">'+w+'</span>'});
+ for(var i=0;i<first;i++)h+="<span></span>";
+ for(var d=1;d<=n;d++){
+  var k=y+"-"+pad(m+1)+"-"+pad(d),mk=MARCOS.filter(function(x){return x.d===k})[0],c="";
+  if(y===now.getFullYear()&&m===now.getMonth()&&d===now.getDate())c="today";
+  if(mk){c="mk";notes+="<li><b>"+d+"/"+pad(m+1)+"</b> — "+mk.t+"</li>"}
+  h+='<span class="'+c+'"'+(mk?' title="'+mk.t+'"':"")+'>'+d+'</span>';
+ }
+ $("#calgrid").innerHTML=h;$("#calttl").textContent=MESES[m]+" "+y;$("#caln").innerHTML=notes;
+}
+$("#cprev").onclick=function(){cur=new Date(cur.getFullYear(),cur.getMonth()-1,1);drawCal()};
+$("#cnext").onclick=function(){cur=new Date(cur.getFullYear(),cur.getMonth()+1,1);drawCal()};
+drawCal();
+document.querySelectorAll("[data-ext]").forEach(function(a){a.href=LINKS[a.dataset.ext]});
+// roteamento por hash
+function route(){
+ var h=(location.hash||"#inicio").slice(1);if(!$("#v-"+h))h="inicio";
+ document.querySelectorAll(".view").forEach(function(v){v.classList.toggle("on",v.id==="v-"+h)});
+ document.querySelectorAll(".sub a").forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+h)});
+ $("#side").classList.remove("open");$("#burger").setAttribute("aria-expanded","false");
+ $("#drop").classList.remove("show");window.scrollTo(0,0);
+}
+addEventListener("hashchange",route);route();
+// submenus
+document.querySelectorAll("[data-sub]").forEach(function(b){b.onclick=function(){
+ var s=document.getElementById(b.dataset.sub),o=s.classList.toggle("open");
+ b.classList.toggle("open-b",o);b.setAttribute("aria-expanded",o)}});
+$("#burger").onclick=function(){var o=$("#side").classList.toggle("open");this.setAttribute("aria-expanded",o)};
+// busca
+var IDX=Object.keys(PAGES).map(function(k){return {k:k,t:PAGES[k][0]}});
+var TOP=["TCC","Estágio","Calendário","Links urgentes","Professores","Contatos"];
+$("#top").innerHTML=TOP.map(function(t){return '<button class="chip" data-t="'+t+'">'+t+'</button>'}).join("");
+function find(v){v=v.toLowerCase();var m=IDX.filter(function(i){return i.t.toLowerCase().indexOf(v)>-1});
+ if(/tcc|est[aá]gio|prazo|urgente/.test(v))m=[{k:"links-urgentes",t:"Links urgentes"}].concat(m);
+ if(/calend/.test(v)){location.hash="inicio";setTimeout(function(){$("#cal").scrollIntoView()},50);return null}
+ return m}
+function show(v){var m=find(v);if(m===null)return;
+ $("#res").innerHTML=m.length?m.map(function(i){return '<a class="chip" href="#'+i.k+'">'+i.t+'</a>'}).join(""):"<p>Nada encontrado. Tente “TCC” ou “contatos”.</p>"}
+$("#q").onfocus=function(){$("#drop").classList.add("show")};
+$("#q").oninput=function(){$("#drop").classList.add("show");if(this.value.trim())show(this.value);else $("#res").innerHTML=""};
+$("#top").onclick=function(e){var t=e.target.dataset.t;if(t){$("#q").value=t;show(t)}};
+document.addEventListener("click",function(e){if(!e.target.closest(".search"))$("#drop").classList.remove("show")});
+</script>
+</body>
+</html>
